@@ -12,7 +12,7 @@
   nixConfig = {
     substituters = [
       # Query the mirror of USTC first, and then the official cache.
-      # "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
   };
@@ -135,6 +135,10 @@
               zle -N down-line-or-beginning-search
               zle -N up-line-or-beginning-search
 
+              if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+                . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+              fi
+
               . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
               # . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.zsh"
 
@@ -146,6 +150,7 @@
               eval $(/opt/homebrew/bin/brew shellenv)
               autoload -Uz compinit && compinit
               export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+              export PATH="/run/current-system/sw/bin:$PATH"
 
               export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
               export DISABLE_SPRING=true
