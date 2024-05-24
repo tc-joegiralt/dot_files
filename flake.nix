@@ -152,11 +152,10 @@
               autoload -Uz compinit && compinit
               export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
               export PATH="/run/current-system/sw/bin:$PATH"
-              export PATH="/run/current-system/sw/bin:$PATH"
               export PATH="/usr/local/bin:$PATH"
               export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
               export DISABLE_SPRING=true
-              neofetch
+              fastfetch
             '';
             oh-my-zsh = {
               enable = true;

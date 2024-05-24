@@ -26,7 +26,7 @@
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
     specialArgs.roc.packages.${specialArgs.system}.cli
     specialArgs.roc.packages.${specialArgs.system}.lang-server
-    neofetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
+    fastfetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
     tmux # A terminal multiplexer that lets you switch easily between several programs in one terminal, detach them, and reattach them to a different terminal.
   ];
 
@@ -78,6 +78,7 @@
       "mpg123" # A fast console MPEG Audio Player and decoder library.
       "mysql" # A popular database management system used for managing relational databases.
       "mysql-client" # Client programs and libraries for MySQL database access.
+      "ollama" # Create, run, and share large language models (LLMs)
       "openssl@1.1" # A robust, commercial-grade, full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
       "readline" # A library for providing a set of functions for use by applications that allow users to edit command lines as they are typed in.
       {
