@@ -23,6 +23,7 @@
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.11-darwin";
+    roc.url = "github:roc-lang/roc";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
@@ -39,6 +40,7 @@
     nixpkgs,
     darwin,
     home-manager,
+    roc,
     ...
   }: let
     mkApp = scriptName: system: {
@@ -71,7 +73,7 @@
     specialArgs =
       inputs
       // {
-        inherit username hostname mkApp mkDarwinApps home-manager;
+        inherit username hostname mkApp mkDarwinApps home-manager roc system;
       };
   in {
     nixpkgs.config.allowUnfree = true;
@@ -87,7 +89,6 @@
         ./modules/system.nix
         ./modules/apps.nix
         ./modules/host-users.nix
-        # ./modules/home-manager.nix
         home-manager.darwinModules.home-manager
         ({ pkgs, ... }: {
         environment.systemPackages = with pkgs; [

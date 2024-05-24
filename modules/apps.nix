@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, specialArgs, system, ...}: {
 
   ##########################################################################
   #
@@ -24,6 +24,8 @@
     devenv # A development environment manager to configure and switch between development environments easily.
     git # A distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
+    specialArgs.roc.packages.${specialArgs.system}.cli
+    specialArgs.roc.packages.${specialArgs.system}.lang-server
     neofetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
     tmux # A terminal multiplexer that lets you switch easily between several programs in one terminal, detach them, and reattach them to a different terminal.
   ];
