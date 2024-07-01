@@ -24,6 +24,7 @@
     devenv # A development environment manager to configure and switch between development environments easily.
     git # A distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
+    rustup
     specialArgs.roc.packages.${specialArgs.system}.cli
     specialArgs.roc.packages.${specialArgs.system}.lang-server
     fastfetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
