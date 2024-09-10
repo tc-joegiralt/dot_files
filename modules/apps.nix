@@ -23,6 +23,7 @@
     btop # A resource monitor that shows usage and stats for processor, memory, disks, network, and processes.
     devenv # A development environment manager to configure and switch between development environments easily.
     git # A distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+    gh
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
     rustup
     specialArgs.roc.packages.${specialArgs.system}.cli
@@ -42,7 +43,7 @@
     onActivation = {
       autoUpdate = false;
       # 'zap': uninstalls all formulae(and related files) not listed here.
-      # cleanup = "zap";
+      cleanup = "zap";
     };
 
     taps = [
@@ -97,7 +98,9 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       "docker"
+      "slack"
       "wezterm@nightly" # a GPU-accelerated terminal emulator and multiplexer written in Rust, offering advanced features and performance for developers.
+      "zed"
     ];
   };
 }

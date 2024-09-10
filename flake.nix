@@ -63,7 +63,7 @@
       "rollback" = mkApp "rollback" system;
     };
     # TODO replace with your own username and system
-    username = "josephgiralt";
+    username = "joe";
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
     # hostname = "${username}-macbook";
     hostname = "macbook-pro-1";
@@ -95,7 +95,7 @@
           darwin
         ];
         home-manager.backupFileExtension = "backup";
-        home-manager.users.josephgiralt = {
+        home-manager.users.joe = {
           programs.atuin = {
             enable = true;
             settings = {

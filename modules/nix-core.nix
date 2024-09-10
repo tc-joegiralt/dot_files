@@ -8,7 +8,7 @@
 
     # substituers that will be considered before the official ones(https://cache.nixos.org)
     substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      # "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
     ];
     trusted-public-keys = [
@@ -19,5 +19,8 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
+
+  # Adds Tailscale
+  services.tailscale.enable = true;
   nix.package = pkgs.nix;
 }
