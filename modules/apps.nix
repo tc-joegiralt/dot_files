@@ -23,13 +23,14 @@
     btop # A resource monitor that shows usage and stats for processor, memory, disks, network, and processes.
     devenv # A development environment manager to configure and switch between development environments easily.
     git # A distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-    gh
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
     rustup
+    nixd
     specialArgs.roc.packages.${specialArgs.system}.cli
     specialArgs.roc.packages.${specialArgs.system}.lang-server
     fastfetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
     tmux # A terminal multiplexer that lets you switch easily between several programs in one terminal, detach them, and reattach them to a different terminal.
+    vscode
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
@@ -43,13 +44,11 @@
     onActivation = {
       autoUpdate = false;
       # 'zap': uninstalls all formulae(and related files) not listed here.
-      cleanup = "zap";
+      cleanup = "uninstall";
     };
 
     taps = [
-      "homebrew/cask-fonts"
       "homebrew/services"
-      "homebrew/cask-versions"
     ];
 
     # `brew install`
@@ -63,6 +62,7 @@
       "freeimage" # An open-source library that supports popular graphics image formats.
       "fswatch" # A cross-platform file change monitor that uses the operating system's native event monitoring interface to notify about changes.
       "gcc" # The GNU Compiler Collection - a robust suite of compilers for C, C++, and other programming languages.
+      "gh"
       "gmp" # A free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers.
       "gpg" # GNU Privacy Guard, a data encryption and decryption program that provides cryptographic privacy and authentication.
       "imagemagick" # A powerful tool for creating, editing, and converting bitmap images.
@@ -97,6 +97,7 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      # "google-chrome"
       "docker"
       "slack"
       "wezterm@nightly" # a GPU-accelerated terminal emulator and multiplexer written in Rust, offering advanced features and performance for developers.

@@ -12,7 +12,7 @@
   nixConfig = {
     substituters = [
       # Query the mirror of USTC first, and then the official cache.
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      # "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
   };
@@ -20,7 +20,7 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable&shallow=1";
     home-manager.url = "github:nix-community/home-manager";
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-23.11-darwin";
     roc.url = "github:roc-lang/roc";
@@ -175,7 +175,6 @@
                 "vi-mode"
                 "yarn"
                 "zsh-navigation-tools"
-                "systemd"
               ];
             };
           };
@@ -184,10 +183,30 @@
             vim
             git
             keychain
-            neofetch
+            fastfetch
             direnv
             darwin
           ];
+          home.file = {
+            ".tool-versions" = {
+              enable = true;
+              recursive = true;
+              text =
+                let
+                  versions = [
+                    { tool = "bun"; version = "1.1.20"; }
+                    { tool = "elixir"; version = "1.17.2-otp-27"; }
+                    { tool = "erlang"; version = "27.0.1"; }
+                    { tool = "golang"; version = "1.22.5"; }
+                    { tool = "nodejs"; version = "22.5.1"; }
+                    { tool = "ruby"; version = "3.2.1"; }
+                    { tool = "zig"; version = "0.13.0"; }
+                    { tool = "gleam"; version = "1.3.2"; }
+                  ];
+                in
+                builtins.concatStringsSep "\n" (builtins.map (v: "${v.tool} ${v.version}") versions);
+            };
+            };
         };
       })
       ];
