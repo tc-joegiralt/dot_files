@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 ###################################################################################
 #
 #  macOS's System configuration
@@ -9,7 +8,6 @@
 #
 ###################################################################################
 {
-
   # https://daiderd.com/nix-darwin/manual/index.html
   system = {
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
@@ -42,5 +40,4 @@
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
-
 }
