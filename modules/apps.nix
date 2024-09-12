@@ -1,4 +1,4 @@
-{ pkgs, specialArgs, system, ...}: {
+{ pkgs, specialArgs, system, ... }: {
 
   ##########################################################################
   #
@@ -26,11 +26,26 @@
     multitail # Allows you to monitor logfiles and command output in multiple windows in a terminal, interactively.
     rustup
     nixd
+    nixpkgs-fmt
     specialArgs.roc.packages.${specialArgs.system}.cli
     specialArgs.roc.packages.${specialArgs.system}.lang-server
     fastfetch # A command-line tool that displays system information alongside an operating system's logo in an aesthetically pleasing format
     tmux # A terminal multiplexer that lets you switch easily between several programs in one terminal, detach them, and reattach them to a different terminal.
-    vscode
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix
+        ms-python.python
+        ms-azuretools.vscode-docker
+        ms-vscode-remote.remote-ssh
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "remote-ssh-edit";
+          publisher = "ms-vscode-remote";
+          version = "0.47.2";
+          sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+        }
+      ];
+    })
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
