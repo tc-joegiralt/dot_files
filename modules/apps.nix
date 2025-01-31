@@ -70,7 +70,7 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "awscli" # The official Amazon AWS command-line interface for managing AWS services.
-      "coreutils" # A set of command line utilities fundamental to both the GNU and Unix operating systems.
+      # "coreutils" # A set of command line utilities fundamental to both the GNU and Unix operating systems.
       "curl" # A tool and libcurl library for transferring data with URLs.
       "direnv" # An environment switcher for the shell that loads and unloads environment variables depending on the current directory.
       "ffmpeg" # A complete, cross-platform solution to record, convert and stream audio and video.
@@ -93,10 +93,11 @@
       "md5sha1sum" # Utilities for computing message digests including MD5 and SHA1.
       "media-info" # A convenient unified display of the most relevant technical and tag data for video and audio files.
       "mpg123" # A fast console MPEG Audio Player and decoder library.
-      "mysql" # A popular database management system used for managing relational databases.
-      "mysql-client" # Client programs and libraries for MySQL database access.
+      # "mysql" # A popular database management system used for managing relational databases.
+      # "mysql-client" # Client programs and libraries for MySQL database access.
       "ollama" # Create, run, and share large language models (LLMs)
       "openssl@1.1" # A robust, commercial-grade, full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
+      "git-quick-stats"
       "readline" # A library for providing a set of functions for use by applications that allow users to edit command lines as they are typed in.
       {
         name = "redis";
@@ -113,8 +114,8 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       # "google-chrome"
-      "docker"
       "slack"
+      "stats" # macOS system monitor in your menu bar
       "wezterm@nightly" # a GPU-accelerated terminal emulator and multiplexer written in Rust, offering advanced features and performance for developers.
       "zed"
     ];
