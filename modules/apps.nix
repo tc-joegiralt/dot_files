@@ -84,11 +84,11 @@
       "libsndfile" # A C library for reading and writing files containing sampled sound through one standard library interface.
       "libsodium" # A modern, easy-to-use software library for encryption, decryption, signatures, password hashing, and more.
       "libxml2" # A library for parsing XML documents.
-      {
-        name = "mariadb@10.3";
-        restart_service = "changed";
-        link = true;
-      } # A robust, scalable, and reliable SQL server forked from MySQL.
+      # {
+      #   name = "mariadb@10.3";
+      #   restart_service = "changed";
+      #   link = true;
+      # } # A robust, scalable, and reliable SQL server forked from MySQL.
       "mas" # Mac App Store command-line interface.
       "md5sha1sum" # Utilities for computing message digests including MD5 and SHA1.
       "media-info" # A convenient unified display of the most relevant technical and tag data for video and audio files.
